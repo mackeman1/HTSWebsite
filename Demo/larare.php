@@ -25,7 +25,28 @@ include '../Demo/connect.php';
             <div id="center-right">
                 <div id="info">
 				<h1 class="dokument-item-header"> Lärare i skolan</h1>
-				<p class="info">En lista över lärare i skolan</p>
+				<p class="info">En lista över lärare i skolan
+				<?php
+         $query = "SELECT id, name FROM test";
+         //echo '<em> ' . $query . ' </em>';
+         $result = mysql_query($query);
+         if ($result === false) {
+	         echo '<strong> Error when you asked a question to your databas. ' . mysql_errno . ' : <br />' . mysql_error . '</strong>';
+        }
+
+         $num=mysql_numrows($result);
+         if($num==0) {
+             echo '<strong>Your question is empty</strong>';
+         }
+         else {
+             echo "<ul>";
+             for ($i=0;$i<$num;$i++) {
+                 $temp = mysql_fetch_array($result);
+	             echo "<li>" . $temp["namn"] . "</li>";
+             }
+             echo "</ul>";
+        }
+?></p>
 				
 				<?php
          $query = "SELECT personer.namn, personer.alder, larare.legitimation FROM `larare`, `personer` WHERE larare.id=personer.altid";
