@@ -22,7 +22,7 @@ body{
 
 /* column */
 #content, #left, #right, #frame, #footer {
-	background: #66CCFF;
+	background: #000000;
 	}
 	
 /* Front */
@@ -32,7 +32,7 @@ body{
 
 /* Spotlight */	
 #banner-right, #banner-left {
-	background-color: #003399;
+	background-color: #000000;
 }	
 
 /***************************************
