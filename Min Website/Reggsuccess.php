@@ -5,8 +5,11 @@ $result = mysql_query ($reggtry);
 if ($result === false) {
 echo "Hej, du har fel";
 }
-else{
+$password = md5 ($_GET['Pw']);
+$unsafe_variable = $_GET["Namnet"];
+$safe_variable = mysql_real_escape_string($unsafe_variable);
+
 mysql_close($link);
-header('Location: http://localhost/kebab/%20Min%20Website/index.html');
-}
+header('Location: http://localhost/kebab/%20Min%20Website/index.php');
+
 ?>
