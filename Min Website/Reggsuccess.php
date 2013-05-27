@@ -10,6 +10,6 @@ $unsafe_variable = $_GET["Namnet"];
 $safe_variable = mysql_real_escape_string($unsafe_variable);
 
 mysql_close($link);
-header('Location: http://localhost/kebab/%20Min%20Website/index.php');
+header('Location: index.php');
 
 ?>
